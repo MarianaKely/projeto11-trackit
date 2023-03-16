@@ -1,8 +1,10 @@
+ import MainConfiguration from "./components/MainConfiguration";
 
-import './App.css';
+ export default function App (){
+    return (
+        
 
-function App() {
-  return 
-}
+       <MainConfiguration></MainConfiguration>
 
-export default App;
+    )
+ }
