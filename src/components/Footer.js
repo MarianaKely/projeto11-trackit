@@ -6,9 +6,17 @@
 import React from "react";
 import styled from "styled-components";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
-import { UserContext } from "../global/UserContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
+
+// Import files from js pages - outset
+
+
+import { UserContext } from "../global/UserContext";
+
+
+// Import files from js pages - end
 
 
 export default function Footer() {
@@ -70,7 +78,7 @@ export default function Footer() {
   )
 
 
-// Creation configuration of header layout- outset 
+// Creation configuration of footer layout- outset 
 
 
 }
@@ -146,3 +154,9 @@ background-color: #ffffff;
 `
 
 // styling the forward buttons  - end
+
+
+// Footer.js page styling - end
+
+
+// General configuration and rendering the footer - end
