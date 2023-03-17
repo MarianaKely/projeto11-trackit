@@ -41,7 +41,7 @@ export default function MainConfiguration () {
     return (
 
 
-// Creation configuration of header layout- outset    
+// Creation configuration of main config layout- outset    
 
 
       <MainContainer>
@@ -80,7 +80,7 @@ export default function MainConfiguration () {
     )
 
 
-// Creation configuration of header layout- outset    
+// Creation configuration of main config layout- outset    
 
 
 
