@@ -6,6 +6,7 @@ import React from "react";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import dayjs from "dayjs";
 
 
 
@@ -26,7 +27,7 @@ export default function TheDay() {
 
 // Constants and functions that enable functionalities on the today page - outset  
 
- 
+  const today = dayjs().locale("pt-BR").format("dddd, DD/MM");
   const { profileName, dailyschedule, setDailySchedule } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
   
@@ -104,7 +105,7 @@ export default function TheDay() {
 
         <Outset>
 
-          <Top data-test="today"></Top>
+          <Top data-test="today">{today}</Top>
 
           <Percentageofhabits done={finishedHabits} data-test="today-counter">
             {finishedHabits ? `${((finishedHabits * 100) / allHabits).toFixed( 0 )}% ${"dos hábitos concluídos"}`: "Nenhum hábito concluído ainda"}
