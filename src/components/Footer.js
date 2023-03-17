@@ -35,7 +35,30 @@ export default function Footer() {
         Hábitos
       </ForwardHabits>
 
-      <ForwardToday onClick={() => nextPage("/hoje")} data-test="today"> Hoje </ForwardToday>
+      <ForwardToday onClick={() => nextPage("/hoje")} data-test="today">
+
+        <CircularProgressbarWithChildren
+
+          minValue={0}
+          maxValue={dailyschedule ? dailyschedule.length : 0}
+          value={dailyschedule ? dailyschedule.filter((h) => h.done).length : 0}
+
+          styles={{
+
+            root: {
+
+              verticalAlign: "middle",
+            },
+            path: {
+
+              stroke: `rgba(255, 255, 255)`,
+            },
+
+          }}
+
+        > Hoje </CircularProgressbarWithChildren>
+
+      </ForwardToday>
 
 
       <ForwardHistory onClick={() => nextPage("/historico")} data-test="history-link">
