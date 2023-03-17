@@ -74,9 +74,6 @@ export default function TheDay() {
 
   const finishedHabits = dailyschedule ? dailyschedule.filter((parameter) => parameter.done).length: 0;
   const allHabits = dailyschedule ? dailyschedule.length : 0;
-
-  
-
     
 
 
@@ -179,14 +176,15 @@ export default function TheDay() {
 
 
 const ContainerTheDayPage = styled.div`
-  padding-top: 90px;
-  padding-bottom: 100px;
-  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  background-color: #f2f2f2;
+  padding-top: 90px;
+  padding-bottom: 100px;
+ 
 `
 
 // styling of the container that holds the whole page -end
@@ -201,19 +199,22 @@ const Row = styled.div`
   max-width: 350px;
   margin-bottom: 10px;
   display: ${(props) => (props.hide ? "none" : "flex")};
+
 `
 
 const Outset = styled.div`
   width: 100%;
   padding-left: 5px;
+
 `
 
 // styling the date -outset
 
 const Top = styled.div`
-color: #126ba5;
-font-size: 23px;
-margin-bottom: 5px;
+  color: #126ba5;
+  font-size: 23px;
+  margin-bottom: 5px;
+
 `
 
 // styling the date - end
@@ -237,10 +238,11 @@ const Percentageofhabits = styled.div`
 
 
 const Habit = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 30px;
-  width: 100%;
+  
 `
 
 
@@ -248,46 +250,60 @@ const Habit = styled.div`
 
 
 const IndividualHabit = styled.div`
-  max-width: 340px;
-  width: 100%;
-  height: 94px;
-  border-radius: 5px;
-  display: flex;
-  background-color: #ffffff;
-  margin-bottom: 10px;
-  align-items: center;
+   max-width: 614px;
+   width: 90%;
+   height: 90px;
+   display: flex;
+   align-items: center;
+   border-radius: 5px;
+   background-color: #ffffff;
+   margin-bottom: 10px;
+  
   div {
+
     width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0px 10px;
     color: #666666;
+    padding: 0px 10px;
+    
     h1 {
+
       font-size: 20px;
       margin-bottom: 10px;
+
     }
+
     p {
-      font-size: 13px;
+
       display: flex;
+      font-size: 13px;
+      
     }
   }
+
   button {
-    background-color: #ffffff;
     width: 20%;
-    height: 80%;
+    height: 80%;  
+    color: white; 
     border-radius: 5px;
     border-width: 0;
+    background-color: #ffffff;
     background-color: ${(props) => (props.done ? "#8fc549" : "#E7E7E7")};
-    color: white;
+
     ion-icon {
-      height: 100%;
+
       width: 100%;
-      background-color: rgba(0, 0, 0, 0);
+      height: 100%;
       color: "#ffffff";
+      background-color: rgba(0, 0, 0, 0);
+     
+
     }
   }
+
 `
 
 // styling evolution of habits : percents - outset
