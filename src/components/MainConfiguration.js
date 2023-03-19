@@ -66,8 +66,8 @@ export default function MainConfiguration () {
               <Route path="/" element={<SignIn />} />
               <Route path="/cadastro" element={<SignUp />} />
               <Route path="/hoje" element={<TheDay/>} />
-              <Route path="/habitos" element={<MyHabits/>} />
               <Route path="/historico" element={<TaskHistory/>} />
+              <Route path="/habitos" element={<MyHabits />} />
               
             </Routes>
 
