@@ -174,9 +174,9 @@ export default function MyHabits() {
 
                   {wDays.map((parameter, parametertwo) => (
 
-                    <Day key={parametertwo} set={task.days.includes(parametertwo)} data-test="habit-day">
+                    <DDay key={parametertwo} set={task.days.includes(parametertwo)} data-test="habit-day">
                       {parameter}
-                    </Day>
+                    </DDay>
 
                   ))}
 
@@ -259,7 +259,7 @@ const Top = styled.div`
 
 const Row = styled.div`
   max-width: 614px;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   display: ${(props) => (props.hide ? "none" : "flex")};
@@ -309,26 +309,10 @@ const HabitBox = styled.div`
 // styling the box every habit - end
 
 
-// styling week days box - ouset
-
-
-const MyDays = styled.div`
-  ${Day} {
-    margin-right: 5px;
-  }
-  ${Day}:last-child {
-    margin-left: 0;
-  }
-
-`
-
-// styling week days box - end
-
-
 // styling each week day - outset
 
 
-const Day = styled.button`
+const DDay = styled.button`
   width: 30px;
   height: 30px;
   color: ${(props) => (props.set ? "#ffffff" : "#d8d8d8")};
@@ -342,6 +326,25 @@ const Day = styled.button`
 
 
 // styling each week day - end
+
+
+// styling week days box - ouset
+
+
+const MyDays = styled.div`
+  ${DDay} {
+    margin-right: 5px;
+  }
+  ${DDay}:last-child {
+    margin-left: 0;
+  }
+
+`
+
+// styling week days box - end
+
+
+
 
 
 // styling message that appears if there are no habits - outset
