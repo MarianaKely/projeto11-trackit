@@ -215,6 +215,7 @@ const ContainerSignInPage = styled.div`
     margin-top: 20px;
     cursor: pointer;
     text-decoration: underline;
+    margin-bottom: 30px;
     
 }
 `
