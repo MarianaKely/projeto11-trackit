@@ -69,6 +69,7 @@ export default function TheDay() {
 
         alert(`Erro: ${JSON.stringify(error.response.data)}`)
         setLoading(false)
+        console.log ('error found')
 
 
 // a warning will be sent to the user if something goes wrong   

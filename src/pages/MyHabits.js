@@ -51,13 +51,14 @@ export default function MyHabits() {
       ).then((res) => {
 
         console.log(res.data)
-        hiddenHabits();
-        listed();
+        hiddenHabits()
+        listed()
 
       }
       ).catch((error) => {
 
         alert(JSON.stringify(error.response.data))
+        console.log ('error found')
 
       }
 
