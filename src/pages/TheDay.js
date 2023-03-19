@@ -169,7 +169,6 @@ export default function TheDay() {
 
 
 const TheDayPageContainer = styled.div`
-   max-width: 614px;
    width: 100%; 
    height: 100%;
    display: flex;
@@ -188,6 +187,7 @@ const TheDayPageContainer = styled.div`
 
 
 const Row = styled.div`
+  max-width: 614px;
   width: 100%;
   display: flex;
   display: ${(props) => (props.hide ? "none" : "flex")};
@@ -217,9 +217,9 @@ const Outset = styled.div`
 
 
 const Top = styled.div`
-color: #126ba5;
-font-size: 23px;
-margin-bottom: 5px;
+   color: #126ba5;
+   font-size: 23px;
+   margin-bottom: 5px;
 
 `
 
@@ -243,7 +243,7 @@ const Percentage = styled.div`
 
 const TodayHabit = styled.div`
   max-width: 614px;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 30px;
