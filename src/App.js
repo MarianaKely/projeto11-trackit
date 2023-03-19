@@ -10,13 +10,13 @@
 
     return (
         
-// General configuration and rendering the site - outset
+// Creation configuration of page layout- outset 
 
 
        <MainConfiguration></MainConfiguration>
 
 
-// General configuration and rendering the site - end   
+// Creation configuration of page layout- end 
 
 
     )
