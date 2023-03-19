@@ -299,8 +299,8 @@ const HabitBox = styled.div`
   background-color: #ffffff;
   padding: 5px 10px;
 
-  > ion-icon {
-    font-size: 15px;
+  ion-icon {
+    font-size: 20px;
     cursor: pointer;
   }
 
