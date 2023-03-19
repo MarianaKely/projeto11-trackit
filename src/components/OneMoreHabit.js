@@ -1,3 +1,8 @@
+ 
+
+ // General configuration and rendering the add habits page - outset
+
+
  import React from "react";
  import styled from "styled-components";
  import { useState } from "react";
@@ -6,10 +11,14 @@
 export default function OneMoreHabit({ displayOnScreen, archive }) {
 
 
-    const wDays = ["D", "S", "T", "Q", "Q", "S", "S"];
+  // Constants and functions that enable functionalities on the add habits page - outset
+
+
+    const wDays = ["D", "S", "T", "Q", "Q", "S", "S"]; // represents the days of the week
     const [myTitle, setmyTitle] = useState("");
     const [countWeekDays, setCountWeekDays] = useState([]);
     const [loading, setLoading] = useState(false);
+
     
     function weekDay(index) {
   
@@ -19,9 +28,9 @@ export default function OneMoreHabit({ displayOnScreen, archive }) {
     }
   
   
-    function sendArchive(e) {
+    function sendArchive(parameterthree) {
   
-      e.preventDefault()
+      parameterthree.preventDefault()
       setLoading(true)
   
       archive(
@@ -30,6 +39,8 @@ export default function OneMoreHabit({ displayOnScreen, archive }) {
   
           name: myTitle,
           days: countWeekDays,
+
+// structure of the habit information box          
   
         },
   
@@ -46,6 +57,8 @@ export default function OneMoreHabit({ displayOnScreen, archive }) {
       setmyTitle("");
       setCountWeekDays([])
       setLoading(false)
+
+// save the habit      
   
     }
   
@@ -53,11 +66,20 @@ export default function OneMoreHabit({ displayOnScreen, archive }) {
     function theError() {
   
       setLoading(false)
-  
+ 
+// Don't save the habit      
+
     }
+
+
+    // Constants and functions that enable functionalities on the add habits page - end
   
   
     return (
+
+
+// Creation configuration of page layout- outset 
+
   
       <HabitCreateContainer data-test="habit-create-container">
   
@@ -65,7 +87,7 @@ export default function OneMoreHabit({ displayOnScreen, archive }) {
   
           <Row>
   
-            <input placeholder="Nome do hábito" onChange={(e) => setmyTitle(e.target.value)}  value={myTitle}
+            <input placeholder="Nome do hábito" onChange={(parameterthree) => setmyTitle(parameterthree.target.value)}  value={myTitle}
               disabled={loading} data-test="habit-name-input" />
              
           </Row>
@@ -77,10 +99,10 @@ export default function OneMoreHabit({ displayOnScreen, archive }) {
   
               {wDays.map((parameter, parametertwo) => (
   
-                <Day type="button" set={countWeekDays.includes(parametertwo)} key={parametertwo} disabled={loading}
+                <DDay type="button" set={countWeekDays.includes(parametertwo)} key={parametertwo} disabled={loading}
                  onClick={() => weekDay(parametertwo)} data-test="habit-day" >
                   {parameter}
-                </Day>
+                </DDay>
   
               ))}
   
@@ -109,91 +131,168 @@ export default function OneMoreHabit({ displayOnScreen, archive }) {
       </HabitCreateContainer>
   
     )
+
+
+// Creation configuration of page layout- end     
+
   
   }
-  
-  const Row = styled.div`
+
+
+// add habit page styling - outset
+
+
+// styling of the container that holds the whole page -outset  
+
+
+const HabitCreateContainer = styled.div`
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    max-width: 350px;
-    margin-bottom: 10px;
-    display: ${(props) => (props.hide ? "none" : "flex")};
-  `;
-  
-  
-  const HabitBox = styled.div`
-    padding: 5px 10px;
-    width: 100%;
-    border-radius: 5px;
-    background-color: #ffffff;
+    height: 180px;
     color: #666666;
     font-size: 20px;
-    ion-icon {
-      font-size: 15px;
-      cursor: pointer;
-    }
-  `;
-  
-  const Day = styled.button`
-    border: 1px solid #d4d4d4;
     border-radius: 5px;
-    font-size: 20px;
-    color: ${(props) => (props.set ? "#ffffff" : "#d8d8d8")};
-    background-color: ${(props) => (props.set ? "#d8d8d8" : "#ffffff")};
-    width: 30px;
-    height: 30px;
-  `;
-  
-  const MyDays = styled.div`
-    ${Day} {
-      margin-right: 5px;
-    }
-    ${Day}:last-child {
-      margin-left: 0;
-    }
-  `;
-  
-  const HabitCreateContainer = styled(HabitBox)`
+    background-color: #ffffff;
     padding-top: 15px;
+    padding: 5px 10px;
+    
     input {
+
       width: 95%;
       height: 45px;
       font-size: 20px;
+      border: 1px solid #dbdbdb;
       border-radius: 5px;
       border-width: 1px;
       padding: 0 8px;
-      border: 1px solid #dbdbdb;
+
       &::placeholder {
+
         color: #dbdbdb;
+
       }
+
     }
-  `;
-  const CancelAndSave = styled.div`
-    margin-top: 20px;
+
+  `
+
+// styling of the container that holds the whole page -outset  
+
+
+// styling each line of information - outset
+  
+  const Row = styled.div`
+    max-width: 614px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    display: ${(props) => (props.hide ? "none" : "flex")};
+    margin-bottom: 10px;
+    
+  `
+
+
+// styling each line of information - outset  
+
+
+// styling each week day - outset
+
+
+const DDay = styled.button`
+   width: 30px;
+   height: 30px;
+   color: ${(props) => (props.set ? "#ffffff" : "#d8d8d8")};
+   font-size: 20px;
+   border: 1px solid #d4d4d4;
+   border-radius: 5px;
+   background-color: ${(props) => (props.set ? "#d8d8d8" : "#ffffff")};
+
+`
+
+
+// styling each week day - end
+
+
+// styling week days box - ouset
+
+
+const MyDays = styled.div`
+
+   ${DDay} {
+
+     margin-right: 5px;
+
+   }
+
+   ${DDay}:last-child {
+
+     margin-left: 0;
+
+   }
+
+ `
+
+
+// styling week days box - end
+
+
+// styling buttons box - outset
+
+
+const CancelAndSave = styled.div`
+    
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
-    width: 100%;
-  `;
-  
-  const Save = styled.button`
+    margin-top: 20px;
+    
+  `
+
+
+// styling buttons box - end
+
+
+// styling save button - outset
+
+
+const Save = styled.button`
     width: 84px;
     height: 35px;
+    color: #ffffff;
+    font-size: 16px;
     border-radius: 5px;
     border-width: 0;
-    font-size: 16px;
     background-color: #52b6ff;
-    color: #ffffff;
-    &:hover {
-      cursor: pointer;
-    }
-  `;
+    cursor: pointer;
+
+  `
   
-  const Cancel = styled(Save)`
-    background-color: #ffffff;
-    color: #52b6ff;
-  `;
+
+// styling save button - end
+
+
+// styling cancel button - outset
+
+
+const Cancel = styled.button`
+   width: 84px;
+   height: 35px;
+   color: #52b6ff;
+   font-size: 16px;
+   border-radius: 5px;
+   border-width: 0;
+   background-color: #ffffff;
+   cursor: pointer;
+
+`
+
+
+// styling cancel button - end
+
+
+
+// add habit page styling - end
   
   
   
+   // General configuration and rendering the add habits page - end
