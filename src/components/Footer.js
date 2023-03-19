@@ -38,7 +38,7 @@ export default function Footer() {
 
 
     <ContainerFooterPage data-test="menu">
-
+   
       <ForwardHabits onClick={() => nextPage("/habitos")} data-test="habit-link">
         Hábitos
       </ForwardHabits>
@@ -77,6 +77,7 @@ export default function Footer() {
 
   )
 
+  
 
 // Creation configuration of footer layout- outset 
 
